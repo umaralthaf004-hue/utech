@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utech - Digital Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-orange': '#ff6600', // Warna Oranye utama
+                        'custom-dark-bg': '#0e1325', // Latar belakang gelap utama
+                        'custom-card-bg': '#161d36', // Latar belakang kartu/nav/footer
+                        'custom-section-bg': '#0c1328', // Latar belakang section yang lebih spesifik
+                    },
+                }
+            }
+        }
+    </script>
+
+   <style>
+    /* --- FAQ: Kotak Chevron dan Animasi Konten (TETAP SAMA) --- */
+    .faq-content {
+        transition: height 0.3s ease-out; 
+    }
+    
+    .faq-summary {
+        /* CSS FAQ lainnya... */
+        list-style: none; 
+        padding-right: 40px;
+        position: relative;
+    }
+
+    .faq-summary::after {
+        /* CSS FAQ lainnya... */
+        content: '\f078'; 
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 14px;
+        color: #ff6600; 
+        position: absolute;
+        right: 0;
+        top: 50%;
+        
+        background-color: #0e1325; 
+        border-radius: 6px; 
+        padding: 8px; 
+        line-height: 1; 
+        
+        transform: translateY(-50%) rotate(0deg); 
+        transition: transform 0.3s ease, background-color 0.3s ease; 
+    }
+
+    details[open] .faq-summary::after {
+        transform: translateY(-50%) rotate(180deg);
+        background-color: #ff6600; 
+        color: #fff; 
+    }
+
+    /* --- LAYANAN (SERVICES): Transisi Smooth Antar Kolom (FINAL MODIFIKASI) --- */
+    
+    /* MENGGUNAKAN CUBIC BEZIER UNTUK PENUTUPAN YANG LEBIH LEMBUT */
+    /* --- LAYANAN (SERVICES): Transisi Smooth Antar Kolom --- */
+.service-col {
+    /* MENGGUNAKAN CUBIC BEZIER UNTUK PENUTUPAN YANG LEBIH LEMBUT */
+    transition: flex 2.5s cubic-bezier(0.19, 1, 0.22, 1), 
+                min-width 2.5s cubic-bezier(0.19, 1, 0.22, 1), 
+                border-color 0.3s ease-in-out, 
+                z-index 0s 1s;
+}
+/* ... CSS kustom lainnya ... */
+    }
+    
+    /* Target Konten Tertutup (Nomor dan Teks Vertikal - Div ke-3) */
+    .service-col > div:nth-child(3) { 
+        transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+    }
+
+    /* Konten Tertutup muncul kembali dengan delay 0.8s saat kolom menutup */
+    .service-col:not(:hover) > div:nth-child(3) {
+        transition: opacity 0.5s ease-in-out 0.8s, visibility 0s 0.8s;
+    }
+
+    /* Target Konten Terbuka (Judul, Deskripsi, Tombol - Div ke-4) */
+    .service-col > div:nth-child(4) { 
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
+</head>
+<body class="bg-custom-dark-bg">
+
+    <nav class="fixed top-0 left-0 w-full bg-custom-card-bg shadow-lg z-20 transition duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="#home" class="text-2xl font-bold text-white hover:text-primary-orange transition">U<span class="text-primary-orange">Tech</span></a>
+            
+            <div class="space-x-6 text-sm font-medium hidden md:flex">
+                <a href="#home" class="hover:text-primary-orange transition">Home</a>
+                <a href="#services-process" class="hover:text-primary-orange transition">Service</a>
+                <a href="#about" class="hover:text-primary-orange transition">About Us</a>
+                <a href="#faq" class="hover:text-primary-orange transition">FAQ</a>
+                <a href="#contact" class="hover:text-primary-orange transition">Contact</a>
+            </div>
+            
+            <a href="mailto:UtechSH@gmail.com" class="bg-primary-orange text-white py-2 px-5 rounded-full hover:bg-orange-600 transition duration-300 font-semibold text-sm">BOOK NOW</a>
+            
+            <button class="md:hidden text-white text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="bg-custom-card-bg py-12 text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-10">
+            
+            <div>
+                <a href="#home" class="text-2xl font-bold text-white mb-4 block hover:text-primary-orange transition">U<span class="text-primary-orange">Tech</span></a>
+                <p class="text-sm mb-6 max-w-xs">Designed by you, coded by us. We turn your ideas into scalable and impactful digital experiences.</p>
+                
+                <a href="mailto:UtechSH@gmail.com" class="bg-primary-orange text-white py-3 px-8 rounded-full hover:bg-orange-600 transition duration-300 inline-block font-semibold">Get started</a>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-white mb-4">Feature</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="hover:text-primary-orange transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-primary-orange transition">About Us</a></li>
+                    <li><a href="#services-process" class="hover:text-primary-orange transition">Service</a></li>
+                    <li><a href="#faq" class="hover:text-primary-orange transition">FAQ</a></li>
+                    <li><a href="#contact" class="hover:text-primary-orange transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-white mb-4">Company Info</h4>
+                <div class="space-y-3">
+                    <p class="text-sm flex items-center"><i class="fas fa-phone mr-3 text-primary-orange"></i> +62 xxx-xxxx-xxxx</p>
+                    <p class="text-sm flex items-center"><i class="fas fa-envelope mr-3 text-primary-orange"></i> support@yourroomcompany.com</p>
+                    <p class="text-sm flex items-center"><i class="fas fa-map-marker-alt mr-3 text-primary-orange"></i> Malang, East Java – Indonesia</p>
+                </div>
+                
+                <div class="mt-6 w-full h-40 bg-gray-700 rounded-lg overflow-hidden border border-gray-700">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.815252033606!2d112.6375624748119!3d-7.914946392095811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788225585090f7%3A0xb3e648f579979354!2sUniversitas%20Brawijaya!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-10 text-center text-sm border-t border-gray-700 pt-8">
+            © 2025 All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, 
+            once: false, 
+        });
+    </script>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('details.faq-item').forEach(details => {
+            const summary = details.querySelector('.faq-summary');
+            const content = details.querySelector('.faq-content');
+
+            const openAccordion = () => {
+                details.open = true;
+                content.style.height = `${content.scrollHeight}px`;
+            };
+
+            const closeAccordion = () => {
+                const startHeight = content.offsetHeight;
+                content.style.height = `${startHeight}px`;
+                content.offsetHeight; // Pemicu reflow
+                content.style.height = '0';
+            };
+
+            // 1. Inisialisasi: Pastikan tinggi awal diset ke 0 atau scrollHeight
+            content.style.height = details.open ? `${content.scrollHeight}px` : '0';
+
+            summary.addEventListener('click', (e) => {
+                e.preventDefault(); 
+
+                if (!details.open) {
+                    openAccordion();
+                } else {
+                    closeAccordion();
+                }
+            });
+
+            // 2. Event listener setelah transisi selesai
+            content.addEventListener('transitionend', () => {
+                if (details.open && content.style.height !== '0px') {
+                    // Jika sedang membuka DAN transisi ke height penuh (scrollH) sudah selesai, 
+                    // set height ke 'auto' agar konten responsif.
+                    content.style.height = 'auto';
+                } 
+                else if (content.style.height === '0px') {
+                    // Jika content.style.height sudah menjadi '0px', berarti transisi menutup selesai.
+                    details.open = false; 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
