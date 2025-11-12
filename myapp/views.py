@@ -14,7 +14,7 @@ def home_view(request):
 # View untuk Memproses Formulir Kontak
 @require_http_methods(["POST"])
 def submit_kontak(request):
-    """Memproses data yang dikirim dari formulir kontak."""
+    """memproses data yang dikirim dari formulir kontak."""
     
     # Ambil data dari formulir (pastikan attribute 'name' sesuai di HTML)
     nama = request.POST.get('nama')
@@ -22,7 +22,7 @@ def submit_kontak(request):
     pesan = request.POST.get('pesan')
     
     if not nama or not email or not pesan:
-        messages.error(request, 'Semua field wajib diisi!')
+        messages.error(request, 'semua field wajib diisi!')
         return redirect('home') 
     
     # --- Tempatkan Logika Pengiriman Email/Penyimpanan Database di sini ---
