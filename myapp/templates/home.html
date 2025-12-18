@@ -1,55 +1,80 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-<section id="home" class="pt-48 pb-20 md:py-40 bg-custom-dark-bg text-white relative overflow-hidden">
-    
-    <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(circle at 50% 10%, #4a2180 0%, transparent 70%);"></div>
-    
-    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+<section id="hero-section" class="relative min-h-screen bg-[#0B0E17] text-white font-sans overflow-hidden flex flex-col">
+
+    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none bg-vertical-stripes"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#FF6B2C] opacity-10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+    <div class="relative z-10 flex-grow flex flex-col justify-center items-center text-center px-6 mt-10 md:mt-0 pt-20">
         
-        <h1 data-aos="fade-down" class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight max-w-5xl mx-auto">
-            Empowering Your Business with <br>Intelligent IT Services
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight max-w-4xl mb-6">
+            Empowering Your Business with <br />
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-400">Intelligent IT Services</span>
         </h1>
-        <p data-aos="fade-down" data-aos-delay="100" class="text-lg md:text-xl text-gray-400 mb-10 max-w-4xl mx-auto">
+
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 font-light">
             End-to-end technology support to keep your operations competitive in the digital era.
         </p>
-        
-        <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-20">
-            <a href="mailto:UtechSH@gmail.com" class="bg-primary-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 inline-flex items-center space-x-2 shadow-lg text-lg">
-                JOIN WITH US <i class="fas fa-arrow-right"></i>
+
+        <div class="flex flex-col md:flex-row items-center gap-4 mb-20">
+            <a href="#" class="group bg-[#FF6B2C] hover:bg-orange-500 text-black font-bold text-base py-3 pl-8 pr-2 rounded-full inline-flex items-center transition-all duration-300 shadow-lg shadow-orange-500/20">
+                JOIN WITH US
+                <span class="ml-4 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-transform duration-300">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
             </a>
-            <a href="#services-process" class="bg-white/10 border border-white/20 text-white font-semibold py-3 px-8 rounded-full transition duration-300 inline-block hover:bg-white hover:text-custom-dark-bg text-lg">
+
+            <a href="#" class="bg-white text-black hover:bg-gray-200 font-bold text-base py-4 px-10 rounded-full transition duration-300">
                 VIEW MORE
             </a>
         </div>
-        
     </div>
-    
-    <div class="max-w-7xl mx-auto px-6 relative z-10 mt-10 md:mt-20">
-        <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div data-aos="fade-up" class="bg-custom-card-bg p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-primary-orange transition duration-300">
-                <p class="text-primary-orange text-3xl mb-4"><i class="fas fa-tools"></i></p>
-                <h4 class="text-xl font-semibold mb-2 text-gray-200">Custom Development</h4>
-                <p class="text-gray-400">We build apps designed specifically to match your business goals and workflows.</p>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:border-[#FF6B2C]/50 transition duration-300 group">
+                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-[#FF6B2C] group-hover:text-white transition duration-300">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Custom Development</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    We build apps designed specifically to match your business goals and workflows.
+                </p>
             </div>
-            
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-custom-card-bg p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-primary-orange transition duration-300">
-                <p class="text-primary-orange text-3xl mb-4"><i class="fas fa-chart-area"></i></p>
-                <h4 class="text-xl font-semibold mb-2 text-gray-200">Scalable Architecture</h4>
-                <p class="text-gray-400">Every product is built to grow—ready for more users, features, and integration.</p>
+
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:border-[#FF6B2C]/50 transition duration-300 group">
+                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl text-purple-400 mb-6 group-hover:bg-[#FF6B2C] group-hover:text-white transition duration-300">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Scalable Architecture</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Every product is built to grow — ready for more users, features, and integration.
+                </p>
             </div>
-            
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-custom-card-bg p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-primary-orange transition duration-300">
-                <p class="text-primary-orange text-3xl mb-4"><i class="fas fa-sync-alt"></i></p>
-                <h4 class="text-xl font-semibold mb-2 text-gray-200">End-to-End Support</h4>
-                <p class="text-gray-400">From planning, development, deployment, to maintenance—we handle everything.</p>
+
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:border-[#FF6B2C]/50 transition duration-300 group">
+                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl text-green-400 mb-6 group-hover:bg-[#FF6B2C] group-hover:text-white transition duration-300">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">End-to-End Support</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    From planning, development, deployment, to maintenance — we handle everything.
+                </p>
             </div>
-            
+
         </div>
     </div>
-    
+
+    <style>
+        /* Membuat Background Garis-Garis Vertikal */
+        .bg-vertical-stripes {
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 80px 100%; /* Jarak antar garis */
+        }
+    </style>
 </section>
 
 <section id="services-process" class="py-20 bg-custom-dark-bg text-white">
@@ -67,15 +92,13 @@
             </p>
         </div>
 
-        
         <div class="flex h-[550px] w-full max-w-7xl mx-auto rounded-xl overflow-hidden shadow-xl border border-gray-800">
 
-            
             <div data-aos="fade-up" class="service-col group relative flex-1 h-full min-w-[50px] bg-custom-card-bg z-10 
                         transition-all duration-1000 ease-in-out hover:flex-[3] group-hover:z-20 
                         hover:border-primary-orange border-r border-gray-800">
                 
-                <img src="https://i.ibb.co/hV72qjT/website-dev.png" alt="Website Development" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
+                <img src="{% static 'css/img/4.png' %}" alt="Website Development" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
                 
                 <div class="absolute inset-0 w-full h-full bg-custom-dark-bg/80 flex flex-col items-center justify-between py-8">
                     <p class="text-gray-400 text-xs font-semibold uppercase rotate-90 transform origin-bottom-left whitespace-nowrap translate-y-3">Website Dev</p>
@@ -99,12 +122,11 @@
                 </div>
             </div>
 
-            
             <div data-aos="fade-up" data-aos-delay="100" class="service-col group relative flex-1 h-full min-w-[50px] bg-custom-card-bg z-10 
                         transition-all duration-1000 ease-in-out hover:flex-[3] group-hover:z-20 
                         hover:border-primary-orange border-r border-gray-800">
                 
-                <img src="https://i.ibb.co/ZJm7QjQ/mobile-app-dev.png" alt="Mobile App Development" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
+                <img src="{% static 'css/img/5.png' %}" alt="Mobile App Development" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
                 
                 <div class="absolute inset-0 w-full h-full bg-custom-dark-bg/80 flex flex-col items-center justify-between py-8">
                     <p class="text-gray-400 text-xs font-semibold uppercase rotate-90 transform origin-bottom-left whitespace-nowrap translate-y-3">Mobile App Dev</p>
@@ -128,12 +150,11 @@
                 </div>
             </div>
 
-            
             <div data-aos="fade-up" data-aos-delay="200" class="service-col group relative flex-1 h-full min-w-[50px] bg-custom-card-bg z-10 
                         transition-all duration-1000 ease-in-out hover:flex-[3] group-hover:z-20 
                         hover:border-primary-orange border-r border-gray-800">
                 
-                <img src="https://i.ibb.co/BPL23N4/game-dev.png" alt="Game Development" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
+                <img src="{% static 'css/img/6.png' %}" alt="Game Development" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
                 
                 <div class="absolute inset-0 w-full h-full bg-custom-dark-bg/80 flex flex-col items-center justify-between py-8">
                     <p class="text-gray-400 text-xs font-semibold uppercase rotate-90 transform origin-bottom-left whitespace-nowrap translate-y-3">Game Dev</p>
@@ -157,12 +178,11 @@
                 </div>
             </div>
 
-            
             <div data-aos="fade-up" data-aos-delay="300" class="service-col group relative flex-1 h-full min-w-[50px] bg-custom-card-bg z-10 
                         transition-all duration-1000 ease-in-out hover:flex-[3] group-hover:z-20 
                         hover:border-primary-orange">
                 
-                <img src="https://i.ibb.co/30kL613/ai-dev.png" alt="Artificial Intelligence" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
+                <img src="{% static 'css/img/7.png' %}" alt="Artificial Intelligence" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-[1200ms] group-hover:opacity-100 group-hover:scale-110">
                 
                 <div class="absolute inset-0 w-full h-full bg-custom-dark-bg/80 flex flex-col items-center justify-between py-8">
                     <p class="text-gray-400 text-xs font-semibold uppercase rotate-90 transform origin-bottom-left whitespace-nowrap translate-y-3">Artificial Intelligence</p>
@@ -190,51 +210,186 @@
 
     </div>
 </section>
-<section id="services-showcase" class="py-20 text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="absolute inset-0 z-0" style="background-image: linear-gradient(180deg, #0c1328 0%, #1e2540 100%);"></div>
 
-        <div class="relative z-10 text-center">
+<section id="services-showcase" class="relative py-24 bg-[#0B0E17] text-white overflow-hidden font-sans">
+    
+    <div class="absolute inset-0 z-0 pointer-events-none" 
+         style="background: radial-gradient(circle at center, #1E2545 0%, #0B0E17 70%); opacity: 0.8;">
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             
-            <div data-aos="fade-up" class="flex flex-col md:flex-row items-center justify-between text-left mb-16 max-w-5xl mx-auto">
-                <div>
-                    <p class="text-sm font-semibold text-primary-orange mb-2 flex items-center">
-                        <span class="w-2 h-2 bg-primary-orange rounded-full mr-2"></span> Service
-                    </p>
-                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                        Experience the results of our <span class="text-primary-orange">commitment.</span>
-                    </h2>
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/5 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
+                    <span class="w-2.5 h-2.5 bg-[#FF7F3F] rounded-full shadow-[0_0_10px_#FF6B2C]"></span>
+                    <span class="text-white font-medium text-sm tracking-wide">Service</span>
                 </div>
-                <a href="mailto:UtechSH@gmail.com" class="bg-primary-orange text-white py-3 px-8 rounded-full font-semibold hover:bg-orange-600 transition duration-300 flex items-center justify-center space-x-2 text-lg whitespace-nowrap mt-4 md:mt-0">
-                    JOIN WITH US <i class="fas fa-arrow-right ml-2"></i>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+                    Experience the results of our <br class="hidden md:block" />
+                    commitment.
+                </h2>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="group bg-[#FF6B2C] hover:bg-orange-500 text-black font-bold text-lg py-3 pl-8 pr-2 rounded-full inline-flex items-center transition-all duration-300 shadow-lg shadow-orange-500/20">
+                    JOIN WITH US
+                    <span class="ml-4 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-transform duration-300">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
+        </div>
 
-            <div data-aos="zoom-in" class="relative w-full max-w-5xl mx-auto my-16">
-                <img src="https://via.placeholder.com/900x500/1e293b/ffffff?text=Dashboard+Mockup+Main" alt="Dashboard Main" class="relative z-10 w-full rounded-lg shadow-2xl border border-gray-700">
-                <img src="https://via.placeholder.com/850x480/1e293b/ffffff?text=Dashboard+Mockup+Behind+1" alt="Dashboard Behind 1" class="absolute top-10 -left-10 z-0 w-4/5 md:w-[85%] opacity-70 rounded-lg transform -rotate-3 blur-[1px]">
-                <img src="https://via.placeholder.com/850x480/1e293b/ffffff?text=Dashboard+Mockup+Behind+2" alt="Dashboard Behind 2" class="absolute top-10 -right-10 z-0 w-4/5 md:w-[85%] opacity-70 rounded-lg transform rotate-3 blur-[1px]">
+        <div class="relative w-full mb-20">
+            <div class="swiper serviceSwiper !pb-14 !pt-4 !overflow-visible">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide dashboard-slide">
+                        <img src="{% static 'css/img/8.png' %}" alt="Dashboard" class="w-full h-full object-cover rounded-2xl shadow-2xl border border-gray-700">
+                    </div>
+                    <div class="swiper-slide dashboard-slide">
+                        <img src="{% static 'css/img/9.png' %}" alt="Dashboard 2" class="w-full h-full object-cover rounded-2xl shadow-2xl border border-gray-700">
+                    </div>
+                    <div class="swiper-slide dashboard-slide">
+                        <img src="{% static 'css/img/10.png' %}" alt="Dashboard 3" class="w-full h-full object-cover rounded-2xl shadow-2xl border border-gray-700">
+                    </div>
+                    <div class="swiper-slide dashboard-slide">
+                         <img src="{% static 'css/img/12.png' %}" alt="Dashboard 4" class="w-full h-full object-cover rounded-2xl shadow-2xl border border-gray-700">
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mt-12 text-left max-w-5xl mx-auto">
-                <div data-aos="fade-up" class="bg-custom-card-bg p-6 rounded-xl shadow-xl border border-gray-700 hover:border-primary-orange transition duration-300">
-                    <p class="text-primary-orange text-2xl mb-2 flex items-center"><span class="w-2 h-2 bg-primary-orange rounded-full mr-2"></span> Product</p>
-                    <p class="text-gray-400 text-sm">Web engines. We develop e-commerce websites...</p>
+            <div class="flex items-center justify-center space-x-6 mt-4">
+                <button id="svc-prev" class="text-gray-400 hover:text-white transition-colors text-xl">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                
+                <div id="svc-pagination" class="!static !w-auto flex gap-2"></div>
+                
+                <button id="svc-next" class="text-gray-400 hover:text-white transition-colors text-xl">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="bg-[#0F121C] p-8 rounded-2xl border border-white/5 hover:border-[#FF7F3F]/50 transition-colors duration-300 group">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-[#FF7F3F] text-white flex items-center justify-center text-xs shadow-lg shadow-orange-500/20">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-white">Product</h3>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-custom-card-bg p-6 rounded-xl shadow-xl border border-gray-700 hover:border-primary-orange transition duration-300">
-                    <p class="text-primary-orange text-2xl mb-2 flex items-center"><span class="w-2 h-2 bg-primary-orange rounded-full mr-2"></span> Industry</p>
-                    <p class="text-gray-400 text-sm">Our expertise spans various industries...</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    We develop e-commerce websites that are fast, secure, and optimized to drive sales.
+                </p>
+            </div>
+
+            <div class="bg-[#0F121C] p-8 rounded-2xl border border-white/5 hover:border-[#FF7F3F]/50 transition-colors duration-300 group">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-[#FF7F3F] text-white flex items-center justify-center text-xs shadow-lg shadow-orange-500/20">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-white">Industry</h3>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-custom-card-bg p-6 rounded-xl shadow-xl border border-gray-700 hover:border-primary-orange transition duration-300">
-                    <p class="text-primary-orange text-2xl mb-2 flex items-center"><span class="w-2 h-2 bg-primary-orange rounded-full mr-2"></span> Core Technologies</p>
-                    <p class="text-gray-400 text-sm">Laravel, PHP, HTML, CSS, JavaScript, React...</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Website Development tailored for your specific industry needs.
+                </p>
+            </div>
+
+            <div class="bg-[#0F121C] p-8 rounded-2xl border border-white/5 hover:border-[#FF7F3F]/50 transition-colors duration-300 group">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-[#FF7F3F] text-white flex items-center justify-center text-xs shadow-lg shadow-orange-500/20">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-white">Core Technologies</h3>
                 </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Laravel, PHP, HTML, CSS, Tailwind, JavaScript.
+                </p>
             </div>
 
         </div>
     </div>
+
+    <style>
+        /* Ukuran & Transisi Slide */
+        #services-showcase .dashboard-slide {
+            width: 700px;  /* Lebar Desktop */
+            height: 400px; /* Tinggi Desktop */
+            background: transparent;
+            opacity: 0.4;
+            transform: scale(0.8);
+            transition: all 0.5s ease;
+        }
+
+        /* Slide Aktif (Tengah) */
+        #services-showcase .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 20;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            #services-showcase .dashboard-slide {
+                width: 85vw;
+                height: 250px;
+            }
+        }
+
+        /* Pagination Dots Custom */
+        #services-showcase .swiper-pagination-bullet {
+            background: #4B5563;
+            opacity: 1;
+            width: 10px;
+            height: 10px;
+            margin: 0 !important;
+            transition: all 0.3s;
+        }
+        #services-showcase .swiper-pagination-bullet-active {
+            background: #FF6B2C;
+            transform: scale(1.2);
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var serviceSwiper = new Swiper(".serviceSwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: true,
+                initialSlide: 1,
+                
+                // Konfigurasi 3D agar mirip 100%
+                coverflowEffect: {
+                    rotate: 0,      /* Datar, tidak miring */
+                    stretch: 0,
+                    depth: 300,     /* Jauh ke belakang */
+                    modifier: 1,
+                    slideShadows: false,
+                    scale: 0.8      /* Slide samping mengecil */
+                },
+                
+                pagination: {
+                    el: "#svc-pagination",
+                    clickable: true,
+                },
+                
+                navigation: {
+                    nextEl: "#svc-next",
+                    prevEl: "#svc-prev",
+                },
+            });
+        });
+    </script>
 </section>
+
 
 <section id="about" class="py-20 bg-custom-dark-bg text-white">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
@@ -301,6 +456,406 @@
     </div>
 </section>
 
+<section id="technical-questions" class="min-h-screen bg-custom-dark-bg text-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Header Section -->
+        <div data-aos="fade-down" class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+                Technical <span class="text-primary-orange">Questions</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                Find answers to common questions about our services, processes, and technologies.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Left Column - FAQ Questions -->
+            <div class="lg:col-span-2">
+                <h2 class="text-3xl font-bold mb-8 text-gray-200">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div data-aos="fade-right" class="bg-custom-card-bg rounded-xl border border-gray-700 overflow-hidden group hover:border-primary-orange transition duration-300">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                            <h3 class="text-xl font-semibold text-gray-200 pr-4">What services do you offer?</h3>
+                            <span class="text-primary-orange text-2xl transition-transform duration-300">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500">
+                            <div class="p-6 pt-0 border-t border-gray-700">
+                                <p class="text-gray-400 leading-relaxed">
+                                    We provide comprehensive services including web development, mobile app development, game development, and advanced AI integration for businesses of all sizes. Our solutions are tailored to meet your specific business needs.
+                                </p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="bg-primary-orange/10 text-primary-orange px-3 py-1 rounded-full text-sm">Web Development</span>
+                                    <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm">Mobile Apps</span>
+                                    <span class="bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm">Game Development</span>
+                                    <span class="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm">AI Solutions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div data-aos="fade-right" data-aos-delay="100" class="bg-custom-card-bg rounded-xl border border-gray-700 overflow-hidden group hover:border-primary-orange transition duration-300">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                            <h3 class="text-xl font-semibold text-gray-200 pr-4">How do I start a project with your team?</h3>
+                            <span class="text-primary-orange text-2xl transition-transform duration-300">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500">
+                            <div class="p-6 pt-0 border-t border-gray-700">
+                                <p class="text-gray-400 leading-relaxed mb-4">
+                                    Starting a project with us is simple and straightforward. Here's our process:
+                                </p>
+                                <ol class="space-y-3 text-gray-400">
+                                    <li class="flex items-start">
+                                        <span class="bg-primary-orange text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-1 flex-shrink-0">1</span>
+                                        <span><strong>Initial Consultation:</strong> We discuss your requirements, goals, and timeline</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-primary-orange text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-1 flex-shrink-0">2</span>
+                                        <span><strong>Planning & Proposal:</strong> We create a detailed project plan and quote</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-primary-orange text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-1 flex-shrink-0">3</span>
+                                        <span><strong>Development:</strong> Our team starts building your solution</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-primary-orange text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-1 flex-shrink-0">4</span>
+                                        <span><strong>Launch & Support:</strong> We deploy and provide ongoing support</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div data-aos="fade-right" data-aos-delay="200" class="bg-custom-card-bg rounded-xl border border-gray-700 overflow-hidden group hover:border-primary-orange transition duration-300">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                            <h3 class="text-xl font-semibold text-gray-200 pr-4">How long does a typical project take?</h3>
+                            <span class="text-primary-orange text-2xl transition-transform duration-300">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500">
+                            <div class="p-6 pt-0 border-t border-gray-700">
+                                <p class="text-gray-400 leading-relaxed mb-4">
+                                    Project timelines vary based on complexity and requirements. Here are typical timeframes:
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-200 mb-2">Small Website</h4>
+                                        <p class="text-gray-400 text-sm">3-6 weeks</p>
+                                        <div class="w-full bg-gray-700 h-2 rounded-full mt-2">
+                                            <div class="bg-primary-orange h-2 rounded-full w-1/4"></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-200 mb-2">E-commerce Platform</h4>
+                                        <p class="text-gray-400 text-sm">8-16 weeks</p>
+                                        <div class="w-full bg-gray-700 h-2 rounded-full mt-2">
+                                            <div class="bg-primary-orange h-2 rounded-full w-2/3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-200 mb-2">Custom Web App</h4>
+                                        <p class="text-gray-400 text-sm">12-24 weeks</p>
+                                        <div class="w-full bg-gray-700 h-2 rounded-full mt-2">
+                                            <div class="bg-primary-orange h-2 rounded-full w-3/4"></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-200 mb-2">Mobile Application</h4>
+                                        <p class="text-gray-400 text-sm">10-20 weeks</p>
+                                        <div class="w-full bg-gray-700 h-2 rounded-full mt-2">
+                                            <div class="bg-primary-orange h-2 rounded-full w-1/2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm">
+                                    *Timelines are estimated and may vary based on specific requirements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div data-aos="fade-right" data-aos-delay="300" class="bg-custom-card-bg rounded-xl border border-gray-700 overflow-hidden group hover:border-primary-orange transition duration-300">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                            <h3 class="text-xl font-semibold text-gray-200 pr-4">Do you provide maintenance after the project is completed?</h3>
+                            <span class="text-primary-orange text-2xl transition-transform duration-300">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500">
+                            <div class="p-6 pt-0 border-t border-gray-700">
+                                <p class="text-gray-400 leading-relaxed mb-6">
+                                    Yes, we offer comprehensive post-launch maintenance and support packages to ensure your solution continues to perform optimally.
+                                </p>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="text-center p-4 bg-gray-800/30 rounded-lg">
+                                        <div class="text-primary-orange text-2xl mb-2">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-200 mb-1">Basic Support</h4>
+                                        <p class="text-gray-400 text-sm">Bug fixes & security updates</p>
+                                    </div>
+                                    <div class="text-center p-4 bg-gray-800/30 rounded-lg border border-primary-orange/30">
+                                        <div class="text-primary-orange text-2xl mb-2">
+                                            <i class="fas fa-cogs"></i>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-200 mb-1">Standard Maintenance</h4>
+                                        <p class="text-gray-400 text-sm">Updates + performance monitoring</p>
+                                    </div>
+                                    <div class="text-center p-4 bg-gray-800/30 rounded-lg">
+                                        <div class="text-primary-orange text-2xl mb-2">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-200 mb-1">Premium Care</h4>
+                                        <p class="text-gray-400 text-sm">Full support + new features</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div data-aos="fade-right" data-aos-delay="400" class="bg-custom-card-bg rounded-xl border border-gray-700 overflow-hidden group hover:border-primary-orange transition duration-300">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                            <h3 class="text-xl font-semibold text-gray-200 pr-4">What technologies do you use?</h3>
+                            <span class="text-primary-orange text-2xl transition-transform duration-300">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500">
+                            <div class="p-6 pt-0 border-t border-gray-700">
+                                <p class="text-gray-400 leading-relaxed mb-6">
+                                    We leverage a diverse and modern technology stack to build robust, scalable solutions:
+                                </p>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-200 mb-2">Frontend Technologies</h4>
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span class="bg-blue-900/30 text-blue-300 border border-blue-700/30 px-3 py-1 rounded-full text-sm">React</span>
+                                            <span class="bg-green-900/30 text-green-300 border border-green-700/30 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                                            <span class="bg-yellow-900/30 text-yellow-300 border border-yellow-700/30 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                            <span class="bg-cyan-900/30 text-cyan-300 border border-cyan-700/30 px-3 py-1 rounded-full text-sm">CSS</span>
+                                            <span class="bg-orange-900/30 text-orange-300 border border-orange-700/30 px-3 py-1 rounded-full text-sm">HTML5</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-200 mb-2">Backend Technologies</h4>
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span class="bg-purple-900/30 text-purple-300 border border-purple-700/30 px-3 py-1 rounded-full text-sm">Laravel</span>
+                                            <span class="bg-blue-900/30 text-blue-300 border border-blue-700/30 px-3 py-1 rounded-full text-sm">PHP</span>
+                                            <span class="bg-gray-900/30 text-gray-300 border border-gray-700/30 px-3 py-1 rounded-full text-sm">Django</span>
+                                            <span class="bg-green-900/30 text-green-300 border border-green-700/30 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                            <span class="bg-red-900/30 text-red-300 border border-red-700/30 px-3 py-1 rounded-full text-sm">Python</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-200 mb-2">Databases</h4>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="bg-gray-900/30 text-gray-300 border border-gray-700/30 px-3 py-1 rounded-full text-sm">MySQL</span>
+                                            <span class="bg-blue-900/30 text-blue-300 border border-blue-700/30 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                                            <span class="bg-green-900/30 text-green-300 border border-green-700/30 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Column - Contact Form -->
+            <div data-aos="fade-left" class="lg:col-span-1">
+                <div class="bg-custom-card-bg p-8 rounded-2xl border border-gray-700 sticky top-24">
+                    <div class="text-center mb-8">
+                        <div class="text-primary-orange text-4xl mb-4">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-200 mb-2">Still no luck?</h3>
+                        <h3 class="text-2xl font-bold text-gray-200 mb-4">We can help!</h3>
+                        <p class="text-gray-400">
+                            Contact us and we'll get back to you as soon as possible.
+                        </p>
+                    </div>
+
+                    <form method="POST" action="{% url 'submit_kontak' %}" class="space-y-6">
+                        {% csrf_token %}
+                        
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2 text-sm font-medium">Your Name</label>
+                            <input type="text" id="name" name="name" 
+                                   class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white 
+                                          focus:ring-2 focus:ring-primary-orange focus:border-transparent 
+                                          placeholder-gray-500 transition duration-300"
+                                   placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2 text-sm font-medium">Email Address</label>
+                            <input type="email" id="email" name="email" 
+                                   class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white 
+                                          focus:ring-2 focus:ring-primary-orange focus:border-transparent 
+                                          placeholder-gray-500 transition duration-300"
+                                   placeholder="you@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="question" class="block text-gray-300 mb-2 text-sm font-medium">Ask a question</label>
+                            <textarea id="question" name="pertanyaan" rows="4"
+                                      class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white 
+                                             focus:ring-2 focus:ring-primary-orange focus:border-transparent 
+                                             placeholder-gray-500 transition duration-300 resize-none"
+                                      placeholder="Type your question here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-primary-orange text-white py-3 px-6 rounded-lg font-semibold 
+                                       hover:bg-orange-600 transition duration-300 flex items-center justify-center 
+                                       space-x-2 text-lg">
+                            <span>SUBMIT A REQUEST</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <p class="text-center text-gray-500 text-sm mt-4">
+                            We typically respond within 24 hours
+                        </p>
+                    </form>
+                    
+                    <div class="mt-8 pt-8 border-t border-gray-700">
+                        <h4 class="font-semibold text-gray-200 mb-4">Other ways to reach us:</h4>
+                        <div class="space-y-3">
+                            <a href="mailto:UtechSH@gmail.com" class="flex items-center text-gray-400 hover:text-primary-orange transition duration-300">
+                                <i class="fas fa-envelope mr-3"></i>
+                                <span>UtechSH@gmail.com</span>
+                            </a>
+                            <a href="tel:+1234567890" class="flex items-center text-gray-400 hover:text-primary-orange transition duration-300">
+                                <i class="fas fa-phone mr-3"></i>
+                                <span>+1 (234) 567-890</span>
+                            </a>
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-clock mr-3"></i>
+                                <span>Mon-Fri: 9AM-6PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Additional Help Section -->
+        <div data-aos="fade-up" class="mt-16 bg-gradient-to-r from-primary-orange/10 to-blue-500/10 
+                                      border border-gray-700 rounded-2xl p-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0 md:mr-8">
+                    <h3 class="text-2xl font-bold text-gray-200 mb-2">Need more detailed information?</h3>
+                    <p class="text-gray-400">Check out our documentation or schedule a call with our technical team.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#" class="bg-primary-orange text-white py-3 px-6 rounded-lg font-semibold 
+                                      hover:bg-orange-600 transition duration-300 text-center">
+                        <i class="fas fa-book mr-2"></i> View Documentation
+                    </a>
+                    <a href="#" class="bg-white/10 border border-white/20 text-white py-3 px-6 rounded-lg font-semibold 
+                                      hover:bg-white hover:text-custom-dark-bg transition duration-300 text-center">
+                        <i class="fas fa-calendar-alt mr-2"></i> Schedule a Call
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Toggle active class
+                this.parentElement.classList.toggle('active');
+                
+                // Toggle icon
+                if (icon.classList.contains('fa-plus')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+                
+                // Toggle answer
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+                
+                // Close other FAQs
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== this) {
+                        const otherAnswer = otherQuestion.nextElementSibling;
+                        const otherIcon = otherQuestion.querySelector('i');
+                        const otherParent = otherQuestion.parentElement;
+                        
+                        if (otherParent.classList.contains('active')) {
+                            otherParent.classList.remove('active');
+                            otherIcon.classList.remove('fa-minus');
+                            otherIcon.classList.add('fa-plus');
+                            otherAnswer.style.maxHeight = null;
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Auto open first FAQ
+        if (faqQuestions.length > 0) {
+            faqQuestions[0].click();
+        }
+    });
+</script>
+
+<!-- FAQ Custom Styles -->
+<style>
+    .faq-question {
+        transition: all 0.3s ease;
+    }
+    
+    .faq-question:hover {
+        background-color: rgba(249, 115, 22, 0.05);
+    }
+    
+    .faq-item.active {
+        border-color: #f97316;
+    }
+    
+    .faq-answer {
+        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+    
+    /* Smooth scroll for FAQ */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
 <section id="faq" class="py-20 bg-custom-section-bg text-white">
     <div class="max-w-7xl mx-auto px-6">
         
@@ -311,7 +866,7 @@
                 
                 <p class="text-primary-orange font-semibold mb-4 relative z-10">Got Questions?</p>
                 <div class="relative w-full h-40 mb-6">
-                    <img src="https://via.placeholder.com/300x150/1e293b/ffffff?text=Illustration+Placeholder" alt="Contact Illustration" class="w-full h-full object-contain">
+                    <img src="{% static 'css/img/13.png' %}" alt="Contact Illustration" class="w-full h-full object-contain">
                 </div>
                 <div class="relative z-10">
                     <h4 class="text-2xl font-bold mb-4">Still no luck? We can help!</h4>

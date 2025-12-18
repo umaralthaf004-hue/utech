@@ -1,0 +1,128 @@
+/* =========================================================
+   GLOBAL TRANSITION HELPER
+   ========================================================= */
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   FAQ SECTION
+   Chevron Icon + Smooth Expand Content
+   ========================================================= */
+
+/* Wrapper konten FAQ */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* Saat <details> terbuka */
+details[open] .faq-content {
+    max-height: 500px; /* aman untuk isi panjang */
+}
+
+/* Summary FAQ */
+.faq-summary {
+    list-style: none;
+    padding-right: 48px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hilangkan marker default browser */
+.faq-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Chevron Icon */
+.faq-summary::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 14px;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    padding: 8px;
+    border-radius: 6px;
+
+    background-color: #0e1325;
+    color: #ff6600;
+
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Chevron saat open */
+details[open] .faq-summary::after {
+    transform: translateY(-50%) rotate(180deg);
+    background-color: #ff6600;
+    color: #ffffff;
+}
+
+/* =========================================================
+   SERVICES SECTION
+   Smooth Expand / Collapse Column
+   ========================================================= */
+
+.service-col {
+    position: relative;
+    overflow: hidden;
+    transition:
+        flex 1.6s cubic-bezier(0.19, 1, 0.22, 1),
+        min-width 1.6s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.3s ease;
+}
+
+/* CLOSED CONTENT (nomor & teks vertikal) */
+.service-closed {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease 0.2s;
+}
+
+/* OPEN CONTENT (judul, deskripsi, tombol) */
+.service-open {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover Effects */
+.service-col:hover .service-closed {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s;
+}
+
+.service-col:hover .service-open {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+/* =========================================================
+   IMAGE HOVER (BACKGROUND IMAGE SCALE)
+   ========================================================= */
+
+.service-col img {
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.service-col:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   OPTIONAL: PERFORMANCE OPTIMIZATION
+   ========================================================= */
+
+.service-col,
+.service-col img,
+.faq-summary::after {
+    will-change: transform, opacity;
+}
